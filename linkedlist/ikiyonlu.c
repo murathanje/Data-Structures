@@ -102,6 +102,6 @@ void main(){
     addNode(5);
     addNodeHead(1);
     delete(7);
-    // print();
-    printf("%d", tail -> prev -> data);
+    print();
+    // printf("%d", tail -> prev -> data);
 }

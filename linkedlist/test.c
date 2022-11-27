@@ -3,7 +3,6 @@
 
 struct node
 {
-
     int data;
     struct node *next;
     struct node *prev;
@@ -117,7 +116,7 @@ int main()
     addNode(8);
     addNode(9);
     addHeadNode(4);
-    delete(4);
+    delete(5);
     print();
     // printf("%d", head->next->data);
 }

@@ -45,8 +45,19 @@ void enqueue(queue *q, int x){
             q -> rear = temp;
         }
         q -> cnt++;
-
+    }
 }
+void addToQueue(queue *q, int veri){
+    int x = 0;
+    for(int i = 1; i <= veri; i++){
+        if(veri % i  == 0){
+            enqueue(q,i);
+        }else if(x == 1){
+            enqueue(q,i);
+        }else if(x == veri){
+            enqueue(q,i);
+        }
+    }
 
 }
 
@@ -64,9 +75,12 @@ int dequeque(queue *q){
 
 void goster(queue *q){
     if(!isEmpty(q)){
-        printf("\nThe front is : %d", q -> front ->data);
-        printf("\nThe rear is : %d", q -> rear -> data);
-        printf("\nThe cnt : %d", q -> cnt);
+        struct node *temp = q -> front;
+        while(temp != NULL){
+            printf("\n%d", temp ->data);
+            temp = temp ->next;
+        }
+
     }
 }
 
@@ -75,11 +89,8 @@ void main(){
     int x;
     queue *q;
     initialize(q);
-    enqueue(q,10);
-    enqueue(q,11);
-    enqueue(q,12);
-    enqueue(q,13);
+    addToQueue(q,12);
     x = dequeque(q);
-    printf("\nDeleted node is: %d", x);
+    printf("\nDeleted is: %d", x);
     goster(q);
 }
