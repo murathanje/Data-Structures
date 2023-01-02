@@ -40,6 +40,7 @@ struct node *insert(struct node *root, int veri){
     return root;
 }
 
+
 void preorder(struct node *root){
     if(root != NULL){
         printf("%3d ", root -> data);
@@ -49,7 +50,7 @@ void preorder(struct node *root){
     }
 }
 void inorder(struct node *root){
-    if(root != NULL){
+    if(root != NULL && (root->left != NULL || root->right != NULL)){
         inorder(root->left);
         printf("%3d ", root -> data);
         inorder(root->right);
@@ -73,25 +74,25 @@ int size(struct node *root){
 
 int x = 0;
 
-void ortalama(BTREE *root){
-    if(root!=NULL){
-        inorder(root -> left);
-        x += (root -> vize * 0,4)+(root-> final*0,6);
-        inorder(root -> right);
-    }
-}
+// void ortalama(BTREE *root){
+//     if(root!=NULL){
+//         inorder(root -> left);
+//         x += (root -> vize * 0,4)+(root-> final*0,6);
+//         inorder(root -> right);
+//     }
+// }
 
-int ortalama = x / size(root);
+// int ortalama = x / size(root);
 
-void ortamaUstu(BTREE root){
-    if(root!=NULL){
-        inorder(root -> left);
-        if(root -> data > x){
-            printf("\nAdı: %s\nSoyadı: %s\nNumara: %d\nVize: %d\nFinal: %d",root->ad, root->soyad, root -> number, root->vize, root->final);
-        }
-        inorder(root -> right);
-    }
-}
+// void ortamaUstu(BTREE root){
+//     if(root!=NULL){
+//         inorder(root -> left);
+//         if(root -> data > x){
+//             printf("\nAdı: %s\nSoyadı: %s\nNumara: %d\nVize: %d\nFinal: %d",root->ad, root->soyad, root -> number, root->vize, root->final);
+//         }
+//         inorder(root -> right);
+//     }
+// }
 
 int main(){
     struct node *myRoot = NULL;

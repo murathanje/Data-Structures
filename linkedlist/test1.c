@@ -5,6 +5,11 @@
 struct node{
     int data;
     struct node *next;
+    struct node *prev;
+    struct node *right;
+    struct node *left;
+    struct node *up;
+    struct node *down;
 };
 
 struct node *addNode(int veri, struct node *head){
