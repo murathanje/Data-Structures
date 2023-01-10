@@ -53,13 +53,20 @@ int height(BTREE *root){
     if(root == NULL){
         return -1;
     }else{
+
         int left_height, right_height;
+
         left_height = height(root -> left);
         right_height = height(root -> right);
+
         if(right_height > left_height){
+
             return right_height + 1;
+
         }else{
+
             return left_height + 1;
+            
         }
     }
 }
